@@ -3,7 +3,7 @@ SQL datasets for SQL query practice and safe keeping
 
 
 
-### NOTES
+### important notes and trade terminology
 
 
 
