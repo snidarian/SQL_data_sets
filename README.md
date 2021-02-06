@@ -32,6 +32,18 @@ FROM
     employees;
 ```
 
+Below is an example for a way to create a special column that is the sum result of the multiplication of two other columns
+```
+SELECT 
+    orderNumber, 
+    orderlinenumber, 
+    quantityOrdered * priceEach
+FROM
+    orderdetails
+ORDER BY 
+   quantityOrdered * priceEach DESC;
+```
+
 ### ORDER BY - keyword
 
 The below query returns a result set that orders col1 in ascending order and col2 in descending order
@@ -61,11 +73,6 @@ contactlastname asc,
 contactfirstname desc;
 
 ```
-
-
-
-
-
 
 
 
