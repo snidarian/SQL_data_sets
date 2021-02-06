@@ -32,6 +32,35 @@ FROM
     employees;
 ```
 
+### ORDER BY - keyword
+
+The below query returns a result set that orders col1 in ascending order and col2 in descending order
+Example:
+```
+SELECT 
+col1, col2
+FROM
+example_table
+ORDER BY
+col1 asc,
+col2 desc;
+
+```
+Note: What it's specifically doing is tell the result set to be sorted in terms of ascending order in col1 first and then descending order of col2 afterwards.
+In ORDERY BY, the order of which columns are ordered first matters. Note also that the ORDER BY clause is always evaluated after the FROM and SELECT clause.
+
+Example from sample data set 'classicmodels' customer table:
+```
+SELECT
+contactlastname, 
+contactfirstname 
+FROM 
+customers 
+ORDER BY 
+contactlastname asc, 
+contactfirstname desc;
+
+```
 
 
 
