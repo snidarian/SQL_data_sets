@@ -14,13 +14,15 @@ SQL datasets for SQL query practice and safe keeping
 ## SQL Query-formation Quick Reference
 
 ---
-Clause precedence hierarchy:
 
-WHERE
-FROM
-SELECT
-ORDER BY
+#### Clause precedence hierarchy:
 
+Precedence | Clause
+---------- | -------
+1 | WHERE
+2 | FROM
+3 | SELECT
+4 | ORDER BY
 
 
 
