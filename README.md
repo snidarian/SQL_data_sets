@@ -6,11 +6,22 @@ SQL datasets for SQL query practice and safe keeping
 ### important notes and trade terminology
 
 
+
 \
 \
 \
 
 ## SQL Query-formation Quick Reference
+
+---
+Clause precedence hierarchy:
+
+WHERE
+FROM
+SELECT
+ORDER BY
+
+
 
 
 ### SELECT statements
@@ -52,14 +63,14 @@ The below query creates synonyms for SELECT arguments using the AS keyword
 
 ```
 SELECT
-employeenumber AS id,
-lastname AS last,
-firstname AS first
+    employeenumber AS id,
+    lastname AS last,
+    firstname AS first
 FROM
-employees
+    employees
 ORDER BY
-last ASC,
-first ASC;
+    last ASC,
+    first ASC;
 ```
 
 ### WHERE keyword
@@ -92,10 +103,11 @@ SELECT
     employeenumber AS id,
     officecode AS code
 FROM
-employees
+    employees
 WHERE
-jobtitle = 'sales rep' AND officecode = 1 
-ORDER BY id ASC;
+    jobtitle = 'sales rep' AND officecode = 1 
+ORDER BY 
+    id ASC;
 ```
 
 
