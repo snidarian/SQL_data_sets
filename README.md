@@ -9,7 +9,6 @@ SQL datasets for SQL query practice and safe keeping
 \
 \
 \
-\
 
 ## SQL Quick Reference Sheet
 
