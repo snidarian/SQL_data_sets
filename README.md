@@ -6,12 +6,12 @@ SQL datasets for SQL query practice and safe keeping
 ### important notes and trade terminology
 
 
+\
+\
+\
+\
 
-
-
-
-
-### SQL Quick Reference Sheet
+## SQL Quick Reference Sheet
 
 
 ### SELECT statements
