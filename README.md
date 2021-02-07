@@ -15,7 +15,7 @@ SQL datasets for SQL query practice and safe keeping
 
 ---
 
-#### Clause precedence hierarchy:
+#### Clause evaluation-precedence hierarchy:
 
 Precedence | Clause | function
 ---------- | ------- | -------
