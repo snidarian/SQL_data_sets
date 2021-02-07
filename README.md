@@ -17,13 +17,15 @@ SQL datasets for SQL query practice and safe keeping
 
 #### Clause precedence hierarchy:
 
-Precedence | Clause
----------- | -------
-1 | WHERE
-2 | FROM
-3 | SELECT
-4 | ORDER BY
-
+Precedence | Clause | function
+---------- | ------- | -------
+1 | FROM | Choose and join tables to get base data
+2 | WHERE | Filters base data
+3 | GROUP BY | Aggregates base data
+4 | HAVING | Filters aggregated data
+5 | SELECT | Returns final data
+6 | ORDER BY | Sorts the final data
+7 | LIMIT | Limits returned data to a row count
 
 
 ### SELECT statements
