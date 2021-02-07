@@ -46,6 +46,24 @@ ORDER BY
    quantityOrdered * priceEach DESC;
 ```
 
+### AS keyword
+
+The below query creates synonyms for SELECT arguments using the AS keyword
+
+```
+SELECT
+employeenumber AS id,
+lastname AS last,
+firstname AS first
+FROM
+employees
+ORDER BY
+last ASC,
+first ASC;
+```
+
+
+
 ### ORDER BY - keyword
 
 The below query returns a result set that orders col1 in ascending order and col2 in descending order
