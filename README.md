@@ -10,7 +10,7 @@ SQL datasets for SQL query practice and safe keeping
 \
 \
 
-## SQL Quick Reference Sheet
+## SQL Query-formation Quick Reference
 
 
 ### SELECT statements
@@ -62,6 +62,41 @@ last ASC,
 first ASC;
 ```
 
+### WHERE keyword
+
+WHERE clause in the SELECT statement filters rows from the result set. Besides the SELECT statement, you can use the WHERE clause in the UPDATE or DELETE statement to specify which rows to update or delete. In the SELECT statement, the WHERE clause is evaluated after the FROM clause and before the SELECT clause.
+
+```
+SELECT 
+    lastname AS last, 
+    firstname, 
+    jobtitle
+FROM
+    employees
+WHERE
+    jobtitle = 'Sales Rep'
+ORDER BY
+    last ASC;
+    
+```
+WHERE statements can employ the logical operators: 
+- AND
+- OR
+- NOT
+
+
+Note: in the below query that since WHERE is evaluated before before SELECT using code as a synonym defined in the SELECT statement will return an error as the SELECT statement has not yet been evaluated by the time the WHERE statement is evaluated and so the synonym doesn't yet exist.
+```
+SELECT
+    firstname,
+    employeenumber AS id,
+    officecode AS code
+FROM
+employees
+WHERE
+jobtitle = 'sales rep' AND officecode = 1 
+ORDER BY id ASC;
+```
 
 
 ### ORDER BY - keyword
