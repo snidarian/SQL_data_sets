@@ -28,6 +28,8 @@ Precedence | Clause | function
 7 | LIMIT | Limits returned data to a row count
 
 
+---
+
 ### SELECT statements
 
 
@@ -77,6 +79,8 @@ ORDER BY
     first ASC;
 ```
 
+---
+
 ### WHERE keyword
 
 WHERE clause in the SELECT statement filters rows from the result set. Besides the SELECT statement, you can use the WHERE clause in the UPDATE or DELETE statement to specify which rows to update or delete. In the SELECT statement, the WHERE clause is evaluated after the FROM clause and before the SELECT clause.
@@ -99,7 +103,6 @@ WHERE statements can employ the logical operators:
 - OR
 - NOT
 
-
 Note: in the below query that since WHERE is evaluated before before SELECT using code as a synonym defined in the SELECT statement will return an error as the SELECT statement has not yet been evaluated by the time the WHERE statement is evaluated and so the synonym doesn't yet exist.
 ```
 SELECT
@@ -114,6 +117,37 @@ ORDER BY
     id ASC;
 ```
 
+BETWEEN operator can be used with WHERE and logical operator AND
+
+```
+SELECT
+firstname,
+lastname,
+officecode
+FROM
+employees
+WHERE
+officecode BETWEEN 1 AND 3
+ORDER BY
+officecode;
+```
+
+Below example uses multiple logical operators in WHERE statement
+```
+SELECT
+productname,
+msrp
+FROM
+products
+WHERE
+msrp BETWEEN 30 AND 50 OR msrp BETWEEN 70 AND 80
+ORDER BY
+msrp ASC;
+```
+
+
+
+---
 
 ### ORDER BY - keyword
 
