@@ -7,7 +7,7 @@ SQL datasets for SQL query practice and safe keeping
 
 ### Pattern searching wildcards:
 **%** percent sign wildcard matches any string of zero of more characters (like asterisk in std grep search)\
-**_** underscore wildcard matches any single character (like period in std grep search)\
+**_** underscore wildcard matches any single character (like period in std grep search)
 
 \
 \
