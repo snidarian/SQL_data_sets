@@ -65,7 +65,7 @@ ORDER BY
    quantityOrdered * priceEach DESC;
 ```
 
-### AS keyword
+#### AS keyword
 
 The below query creates synonyms for SELECT arguments using the AS keyword
 
@@ -119,6 +119,8 @@ ORDER BY
     id ASC;
 ```
 
+#### BETWEEN operator
+
 BETWEEN operator can be used with WHERE and logical operator AND
 BETWEEN returns True if value is in a range of numbers.
 
@@ -147,14 +149,64 @@ msrp BETWEEN 30 AND 50 OR msrp BETWEEN 70 AND 80
 ORDER BY
 msrp ASC;
 ```
+Another BETWEEN example use
 
-LIKE operator in WHERE statements
+```
+SELECT 
+ordernumber,
+productcode, 
+quantityordered 
+FROM orderdetails 
+WHERE 
+quantityordered BETWEEN 20 AND 28 
+ORDER BY 
+quantityordered DESC;
+```
 
+#### LIKE operator in WHERE statements:\
 
+The below search pattern could also be written as '%s_n'\
+Note that if you took away the 'son' in '%son' and only included percent sign it would return every lastname in table.
+```
+SELECT
+firstname,
+lastname
+FROM
+employees
+WHERE lastname LIKE '%son'
+ORDER BY
+firstname;
+```
 
+Since Ford we're looking for wherever the word 'Ford' appears we surround it with wildcard characters. '%ford%' searches for wherever the word appears in productname
+```
+SELECT 
+productname, 
+msrp 
+FROM 
+products 
+WHERE 
+productname LIKE '%ford%' 
+ORDER BY msrp ASC;
+```
+
+#### IN operator in WHERE statements:\
+
+IN returns true if value matches any value in a list
+```
+SELECT 
+officecode, 
+phone,
+addressline1 
+FROM 
+offices 
+WHERE 
+officecode IN (1, 2, 3) 
+ORDER BY 
+officecode ASC;
+```
 
 ---
-
 ### ORDER BY - keyword
 
 The below query returns a result set that orders col1 in ascending order and col2 in descending order
