@@ -3,9 +3,11 @@ SQL datasets for SQL query practice and safe keeping
 
 
 
-### important notes and trade terminology
+### Refreshers notes and terminology
 
-
+### Pattern searching wildcards:
+**%** percent sign wildcard matches any string of zero of more characters (like asterisk in std grep search)
+**_** underscore wildcard matches any single character (like period in std grep search)
 
 \
 \
@@ -118,6 +120,7 @@ ORDER BY
 ```
 
 BETWEEN operator can be used with WHERE and logical operator AND
+BETWEEN returns True if value is in a range of numbers.
 
 ```
 SELECT
@@ -144,6 +147,9 @@ msrp BETWEEN 30 AND 50 OR msrp BETWEEN 70 AND 80
 ORDER BY
 msrp ASC;
 ```
+
+LIKE operator in WHERE statements
+
 
 
 
