@@ -206,6 +206,31 @@ ORDER BY
 officecode ASC;
 ```
 
+#### IS NULL operator in WHERE statement
+```
+SELECT
+firstname,
+lastname,
+reportsto
+FROM
+employees
+WHERE reportsto IS NULL;
+```
+
+Compatible operators for use in WHERE statements
+
+Operator | Description
+---------|-------------
+= | Equal to. You can use it with almost any data types.
+<> or != | Not equal to
+< | Less than. You typically use it with numeric and date/time data types.
+> | Greater than.
+<= | Less than or equal to
+>= | Greater than or equal to
+
+
+
+
 ---
 ### ORDER BY - keyword
 
