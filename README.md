@@ -115,6 +115,30 @@ ORDER BY
 state ASC;
 ```
 
+You can use the DISTINCT clause with an aggregate function e.g., SUM, AVG, and COUNT, to remove duplicate rows before the aggregate functions are applied to the result set.
+
+The below query returns a count of all US states that have at least one customer in them.
+```
+SELECT
+COUNT(DISTINCT state)
+FROM
+customers
+WHERE
+country = 'USA';
+```
+#### DISTINCT with LIMIT clause
+
+The following query selects the first five non-null unique states in the customers table.
+```
+SELECT DISTINCT
+state
+FROM
+customers
+WHERE state IS NOT NULL
+LIMIT 5;
+```
+
+
 
 ---
 
