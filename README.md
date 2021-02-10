@@ -82,6 +82,40 @@ ORDER BY
     first ASC;
 ```
 
+#### DISTINCT clause in SELECT statements
+Distinct clause is used to return non duplicate entries in a column
+```
+SELECT DISTINCT
+lastname
+FROM
+employees
+ORDER BY
+lastname ASC;
+```
+a DISTINCT clause can also be used on multiple columns to aquire row results with novel combinations of requested columns. You can use the DISTINCT clause with more than one column. In this case, MySQL uses the combination of values in these columns to determine the uniqueness of the row in the result set.
+
+For example, to get a unique combination of city and state from the customers table, you use the following query:
+```
+SELECT
+DISTINCT city, state
+FROM
+customers
+ORDER BY
+state ASC;
+```
+
+Below is the same query but without rows containing NULL in the state field.
+```
+SELECT
+DISTINCT city, state
+FROM
+customers
+WHERE state IS NOT NULL
+ORDER BY
+state ASC;
+
+
+
 ---
 
 ### WHERE keyword
