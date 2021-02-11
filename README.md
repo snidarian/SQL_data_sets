@@ -164,6 +164,30 @@ WHERE statements can employ the logical operators:
 - OR
 - NOT
 
+The below query finds rows where the amount is more than $3000 and customernumber is between 400 and 500
+```
+SELECT
+customernumber
+amount
+FROM
+payments
+WHERE
+amount > 3000 AND customernumber > 400 AND customernumber < 500;
+```
+Another example of using AND logical operator. This time to find customers from CA, USA.
+```
+SELECT
+country,
+state,
+customername
+WHERE
+country = 'USA' AND state = 'CA'
+ORDER BY
+state ASC;
+```
+
+
+
 Note: in the below query that since WHERE is evaluated before before SELECT using code as a synonym defined in the SELECT statement will return an error as the SELECT statement has not yet been evaluated by the time the WHERE statement is evaluated and so the synonym doesn't yet exist.
 ```
 SELECT
