@@ -13,8 +13,7 @@ Note: all language specific keywords are capililized as both a convention of the
 - **_** underscore wildcard matches any single character (like period in std grep search)
 
 \
-\
-\
+
 
 ## SQL Query-formation Quick Reference
 
