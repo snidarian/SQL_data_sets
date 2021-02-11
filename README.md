@@ -15,6 +15,8 @@ Note: all language specific keywords are capililized as both a convention of the
 \
 
 
+
+
 ## SQL Query-formation Quick Reference
 
 ---
