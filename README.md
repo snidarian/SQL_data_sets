@@ -5,6 +5,8 @@ SQL datasets for SQL query practice and safe keeping
 
 
 ### Refreshers notes and terminology
+Note: all language specific keywords are capililized as both a convention of the SQL language and for easy recognition when writing more complicated queries.
+
 
 ### Pattern searching wildcards:
 - **%** percent sign wildcard matches any string of zero of more characters (like asterisk in std grep search)\
@@ -159,6 +161,8 @@ ORDER BY
     last ASC;
     
 ```
+
+#### AND, OR, NOT - Logical Operators
 WHERE statements can employ the logical operators: 
 - AND
 - OR
@@ -185,8 +189,31 @@ country = 'USA' AND state = 'CA'
 ORDER BY
 state ASC;
 ```
+OR
+```
+SELECT
+country,
+state,
+customername
+FROM
+customers
+WHERE
+country = 'uk' or state = 'ca'
+ORDER BY
+country ASC;
+```
+NOT
 
-
+```
+SELECT
+country, state, customername
+FROM
+customers
+WHERE
+country = 'usa' AND NOT state = 'ca'
+ORDER BY
+state ASC;
+```
 
 Note: in the below query that since WHERE is evaluated before before SELECT using code as a synonym defined in the SELECT statement will return an error as the SELECT statement has not yet been evaluated by the time the WHERE statement is evaluated and so the synonym doesn't yet exist.
 ```
