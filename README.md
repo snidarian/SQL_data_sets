@@ -129,7 +129,7 @@ WHERE
 country = 'USA';
 ```
 #### DISTINCT with LIMIT clause
-
+Note: It appears limit statements must come at the end of the query (or at least after the order by statement)
 The following query selects the first five non-null unique states in the customers table.
 ```
 SELECT DISTINCT
