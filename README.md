@@ -306,9 +306,9 @@ ORDER BY
     id ASC;
 ```
 
-#### BETWEEN operator
+#### BETWEEN operator - The BEWTEEN operator is a logical operator
 
-BETWEEN operator can be used with WHERE and logical operator AND
+BETWEEN operator can be used with WHERE and logical operators AND
 BETWEEN returns True if value is in a range of numbers.
 
 ```
@@ -349,6 +349,46 @@ quantityordered BETWEEN 20 AND 28
 ORDER BY 
 quantityordered DESC;
 ```
+##### BETWEEN example - Returning rows bases on value in a range
+```
+SELECT
+customernumber,
+amount
+FROM
+payments
+WHERE amount BETWEEN 12000 AND 45000
+ORDER BY
+amount;
+```
+##### NOT BETWEEN example - Returning rows bases on value outside of a range
+```
+SELECT
+customernumber,
+amount
+FROM
+payments
+WHERE
+amount NOT BETWEEN 12000 AND 50000
+ORDER BY
+amount DESC;
+```
+Using BETWEEN with Dates -When you use the BETWEEN operator with date values, to get the best result, you should use the type cast to explicitly convert the type of column or expression to the DATE type.
+The following example returns the orders which have the required dates between 01/01/2003 to 01/31/2003:
+```
+SELECT 
+   orderNumber,
+   requiredDate,
+   status
+FROM 
+   orders
+WHERE 
+   requireddate BETWEEN 
+     CAST('2003-01-01' AS DATE) AND 
+     CAST('2003-01-31' AS DATE);
+```
+Because the data type of the required date column is DATE so we used the CAST operator to convert the literal strings '2003-01-01' and '2003-12-31' to the DATE values.
+
+
 
 #### LIKE operator in WHERE statements:\
 
