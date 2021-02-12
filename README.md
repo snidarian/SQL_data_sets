@@ -314,6 +314,31 @@ officecode IN (1, 2, 3)
 ORDER BY 
 officecode ASC;
 ```
+Another example of IN operator
+```
+SELECT 
+    officeCode, 
+    city, 
+    phone, 
+    country
+FROM
+    offices
+WHERE
+    country IN ('USA' , 'France');
+```
+the NOT operator can be used with the IN operator as seen below
+
+```
+SELECT
+officecode,
+city,
+phone,
+country
+FROM
+offices
+WHERE
+country NOT IN ('usa' , 'france');
+```
 
 #### IS NULL operator in WHERE statement
 ```
