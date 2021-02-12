@@ -139,7 +139,29 @@ WHERE state IS NOT NULL
 LIMIT 5;
 ```
 
+Using the AVG() function with SELECT to find average of all row items in given column
+```
+SELECT AVG(msrp) FROM products;
+```
+The above result of **SELECT AVG(msrp) FROM products** is equal to 100.4387 but instead of writing the number in another query to use this figure we can just write it as a subquery. The below query is returning all msrp values that are above the average msrp calculated on all products
+```
+SELECT
+productname,
+msrp
+FROM
+products
+WHERE msrp > (SELECT AVG(msrp) from products)
+ORDER BY
+msrp ASC;
+```
 
+Now just for fun's sake let's calculate and return the average of all items that are greater than the original average msrp of all the items.
+```
+SELECT
+AVG(msrp)
+FROM
+products
+WHERE msrp > (SELECT AVG(msrp) FROM products);
 
 ---
 
