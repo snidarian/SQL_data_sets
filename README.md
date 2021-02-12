@@ -162,6 +162,62 @@ AVG(msrp)
 FROM
 products
 WHERE msrp > (SELECT AVG(msrp) FROM products);
+```
+
+Using IN operator with subquery and SUM() function
+```
+SELECT    
+	orderNumber, 
+	customerNumber, 
+	status, 
+	shippedDate
+FROM    
+	orders
+WHERE orderNumber IN
+(
+	 SELECT 
+		 orderNumber
+	 FROM 
+		 orderDetails
+	 GROUP BY 
+		 orderNumber
+	 HAVING SUM(quantityOrdered * priceEach) > 60000
+);
+```
+
+SUM() function with subquery:
+```
+SELECT    
+	orderNumber, 
+	customerNumber, 
+	status, 
+	shippedDate
+FROM    
+	orders
+WHERE orderNumber IN
+(
+	 SELECT 
+		 orderNumber
+	 FROM 
+		 orderDetails
+	 GROUP BY 
+		 orderNumber
+	 HAVING SUM(quantityOrdered * priceEach) > 60000
+);
+```
+
+the outer query uses the IN operator in the WHERE clause to get data from the orders table:
+```
+SELECT 
+    orderNumber, 
+    customerNumber, 
+    status, 
+    shippedDate
+FROM
+    orders
+WHERE
+    orderNumber IN (10165,10287,10310);
+```
 
 ---
 
