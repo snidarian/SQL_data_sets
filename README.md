@@ -388,9 +388,14 @@ WHERE
 ```
 Because the data type of the required date column is DATE so we used the CAST operator to convert the literal strings '2003-01-01' and '2003-12-31' to the DATE values.
 
-
+---
 
 #### LIKE operator in WHERE statements:\
+
+##### Two wildcard characters for constructing something analogous to regex in MySQL
+- **%** - equivalent to asterisk in unix terms - matches any string of zero of more chars.
+- **_** - equivalent to period in unix terms - matches any single character.
+
 
 The below search pattern could also be written as '%s_n'\
 Note that if you took away the 'son' in '%son' and only included percent sign it would return every lastname in table.
@@ -416,6 +421,60 @@ WHERE
 productname LIKE '%ford%' 
 ORDER BY msrp ASC;
 ```
+
+Using underscore wildcard to find name that begins with 'T' and ends with 'm'
+```
+SELECT 
+    employeeNumber, 
+    lastName, 
+    firstName
+FROM
+    employees
+WHERE
+    firstname LIKE 'T_m';
+```
+
+Using NOT LIKE to return all results except what the regex matches.
+```
+SELECT 
+    employeeNumber, 
+    lastName, 
+    firstName
+FROM
+    employees
+WHERE
+    lastName NOT LIKE 'B%';
+```
+
+#### LIKE Operator with ESCAPE clause
+
+using the ESCAPE keyword you can specify a character to use as an escape character.
+If you don't specify an escape character with ESCAPE '[CHAR]' then the default escape character is the backslash char.
+
+Example:
+```
+SELECT 
+    productCode, 
+    productName
+FROM
+    products
+WHERE
+    productCode LIKE '%\_20%';
+```
+
+I could make that exact same query again and this time define '$' as the escape character:
+```
+SELECT 
+    productCode, 
+    productName
+FROM
+    products
+WHERE
+    productCode LIKE '%$_20%' ESCAPE '$';
+```
+
+---
+
 
 #### IN operator in WHERE statements:\
 
