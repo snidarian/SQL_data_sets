@@ -4,15 +4,15 @@ SQL datasets for SQL query practice and safe keeping
 
 
 
+
 ### Refreshers notes and terminology
 Note: all language specific keywords are capililized as both a convention of the SQL language and for easy recognition when writing more complicated queries.
-
+Note: keywords and clauses (SELECT, LIMIT, ORDER BY, LIKE etc..) are **order-sensitive**
 
 ### Pattern searching wildcards:
 - **%** percent sign wildcard matches any string of zero of more characters (like asterisk in std grep search)\
 - **_** underscore wildcard matches any single character (like period in std grep search)
 
-\
 
 
 ## SQL Query-formation Quick Reference
@@ -218,6 +218,69 @@ FROM
 WHERE
     orderNumber IN (10165,10287,10310);
 ```
+
+#### LIMIT clause
+
+The limit clause can accept one or two arguments. The arguments are separated by a comma. The first argument is the offset (the initial valued row to select) and the second is the number of rows or "limit" of rows.
+
+If you don't specify the row offset (first arg) then by default it is set to 0 (the first row)
+```
+LIMIT 0 , row_count;
+```
+It is always a good practice to use the ORDER BY clause and LIMIT clause together for one reason: Unless you order the rows that are returned, if you use a LIMIT clause with N rows being returned you have no idea which N rows are going to be returned unless they are ordered with ORDER BY
+```
+SELECT
+employeenumber, lastname
+FROM
+employees
+ORDER BY
+employeenumber
+LIMIT 0, 10
+```
+
+The following query returns the customers who possess the highest credit limit. By using ORDER BY to DESC (order by descending order) the rows based on the creditlimit column you are specifically asking SELECT and LIMIT for the rows with the highcredit.
+```
+SELECT 
+    customerNumber, 
+    customerName, 
+    creditLimit
+FROM
+    customers
+ORDER BY creditLimit DESC
+LIMIT 5;
+```
+The same can be done to find the customers with the lowest credit:
+```
+SELECT
+customername,
+creditlimit
+FROM
+customers
+ORDER BY
+creditlimit ASC
+LIMIT 0, 8;
+```
+##### COUNT() function:
+The below query finds out how many rows are in the customers table
+```
+SELECT COUNT(*) FROM customers;
+```
+returns:
+```
++----------+
+| COUNT(*) |
++----------+
+|      122 |
++----------+
+1 row in set (0.00 sec)
+```
+
+##### Using LIMIT for pagination
+
+
+
+
+
 
 ---
 
