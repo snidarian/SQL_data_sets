@@ -277,10 +277,64 @@ returns:
 
 ##### Using LIMIT for pagination
 
+This query uses the LIMIT clause to get rows of page 1 which contains the first 10 customers sorted by the customer name:
+```
+SELECT 
+    customerNumber, 
+    customerName
+FROM
+    customers
+ORDER BY customerName    
+LIMIT 10;
+```
 
+This query uses the LIMIT clause to get the rows of the second page that include row 11 – 20:
+```
+SELECT 
+    customerNumber, 
+    customerName
+FROM
+    customers
+ORDER BY customerName    
+LIMIT 10, 10;
+```
 
+##### using LIMIT to get the Nth highest or lowest value
 
+The highest of lowest value (using ORDER BY to sort the rows of course) will be easiest to access as the first value when ordering by ASC or DESC. For instance the customer with the highest credit limit can be accessed thusly using the ordering scheme and the offset value of the LIMIT clause:
 
+```
+SELECT
+customername
+creditlimit
+FROM
+customers
+ORDER BY
+creditlimit DESC
+LIMIT 0,1;
+```
+To get the customer with the lowest credit you would just reverse the ordering scheme:
+```
+SELECT
+customername,
+creditlimit
+FROM
+customers
+ORDER BY
+creditlimit ASC
+LIMIT 0, 1;
+```
+In this same way you could easily find the customer with the second highest credit:
+```
+SELECT
+customername,
+creditlimit
+FROM
+customers
+ORDER BY
+creditlimit DESC
+LIMIT 1,1;
+```
 
 ---
 
