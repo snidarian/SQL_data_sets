@@ -664,8 +664,41 @@ FROM
 employees
 WHERE reportsto IS NULL;
 ```
+The following query uses the IS NULL operator to find customers who do not have a sales representative:
+```
+SELECT 
+    customerName, 
+    country, 
+    salesrepemployeenumber
+FROM
+    customers
+WHERE
+    salesrepemployeenumber IS NULL
+ORDER BY 
+    customerName; 
+```
+The following query finds customers who have a sales rep
+```
+SELECT 
+    customerName, 
+    country, 
+    salesrepemployeenumber
+FROM
+    customers
+WHERE
+    salesrepemployeenumber IS NOT NULL
+ORDER BY 
+   customerName;
+```
 
-Compatible operators for use in WHERE statements
+
+
+
+
+
+
+
+#### Compatible operators for use in WHERE statements
 
 | Operator | Description |
 | ---------|-------------|
