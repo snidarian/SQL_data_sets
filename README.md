@@ -83,6 +83,24 @@ ORDER BY
     first ASC;
 ```
 
+##### CONCAT_WS() function
+
+The first argument is the field separator argument. So args like this:
+```
+SELECT
+CONCAT_WS(', ', lastname, firstname)
+FROM
+employees
+```
+Return the employee's lastname followed by their first named and separated by a comma and a space.
+
+
+
+
+
+
+
+
 #### DISTINCT clause in SELECT statements
 Distinct clause is used to return non duplicate entries in a column
 ```
