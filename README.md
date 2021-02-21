@@ -125,7 +125,7 @@ GROUP BY
 `Order no.`
 HAVING
 total > 60000;
-
+```
 
 
 #### DISTINCT clause in SELECT statements
