@@ -103,7 +103,15 @@ FROM
    employees;
 ```
 
-
+We can use this with the ORDER BY clause to order the output of this new customer column:
+```
+SELECT
+CONCAT_WS(', ', lastname, firstname) AS `full name`
+FROM
+employees
+ORDER BY
+`full name` DESC;
+```
 
 
 
