@@ -95,7 +95,13 @@ employees
 Return the employee's lastname followed by their first named and separated by a comma and a space.
 
 
-
+We can then directly take this special combination that CONCAT_WS produces and give it its own column name:
+```
+SELECT
+   CONCAT_WS(', ', lastName, firstname) AS `Full name`
+FROM
+   employees;
+```
 
 
 
