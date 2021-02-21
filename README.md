@@ -113,6 +113,19 @@ ORDER BY
 `full name` DESC;
 ```
 
+It is very important to note that the WHERE clause is evaluated before the SELECT clause so using aliases in SELECT will not be usable with WHERE
+Consider the code below:
+```
+SELECT
+ordernumber `order no.`,
+SUM(priceeach * quantityordered) total
+FROM
+orderdetails
+GROUP BY
+`Order no.`
+HAVING
+total > 60000;
+
 
 
 #### DISTINCT clause in SELECT statements
