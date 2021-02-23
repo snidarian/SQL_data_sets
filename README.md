@@ -150,8 +150,20 @@ e.lastname;
 ```
 
 
+The query below selects customer name and the number of orders from the customers and orders tables. It uses c as a table alias for the customers table and o as a table alias for the orders table. The columns in the customers and orders tables are referred to via the table aliases.
 
-
+```
+SELECT
+	customerName,
+	COUNT(o.orderNumber) total
+FROM
+	customers c
+INNER JOIN orders o ON c.customerNumber = o.customerNumber
+GROUP BY
+	customerName
+ORDER BY
+	total DESC;
+```
 
 
 
