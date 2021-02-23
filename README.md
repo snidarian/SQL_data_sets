@@ -127,6 +127,36 @@ HAVING
 total > 60000;
 ```
 
+The above alias examples are examples of column aliases. There are also table aliases in SQL:
+```
+SELECT 
+*
+FROM employees AS e;
+```
+
+Once a table has an alias you can refer to columns in that table with the following syntax:
+**table_alias.column_name**
+
+For example:
+```
+SELECT
+e.firstname,
+e.lastname
+FROM
+employees e
+ORDER BY
+e.lastname;
+```
+
+
+
+
+
+
+
+
+
+
 
 #### DISTINCT clause in SELECT statements
 Distinct clause is used to return non duplicate entries in a column
