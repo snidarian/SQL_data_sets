@@ -66,8 +66,9 @@ FROM
 ORDER BY 
    quantityOrdered * priceEach DESC;
 ```
+---
 
-#### AS keyword
+#### AS keyword and Aliases
 
 The below query creates synonyms for SELECT arguments using the AS keyword
 
